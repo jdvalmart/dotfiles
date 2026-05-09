@@ -80,6 +80,56 @@ El script NO incluye (por seguridad):
 | **Notion API token** | Configurar en OpenCode |
 | **HuggingFace token** | `huggingface-cli login` |
 
+## 💾 Archivos que NO están en este repo
+
+Estos archivos contienen claves o datos sensibles. Debes respaldarlos **ANTES de formatear**
+en un **USB o disco externo** (NUNCA en GitHub):
+
+```bash
+# 1. Crear backup manual (en WSL, antes de formatear)
+mkdir -p ~/backup-fedora
+
+# Crítico — sin esto pierdes acceso y memoria de agentes
+cp -r ~/.ssh        ~/backup-fedora/
+cp -r ~/.engram     ~/backup-fedora/
+
+# Importante — configs de herramientas
+cp -r ~/.claude     ~/backup-fedora/
+cp -r ~/.claude.json ~/backup-fedora/
+cp -r ~/.gemini     ~/backup-fedora/
+cp -r ~/.openclaw   ~/backup-fedora/
+cp -r ~/.opencode   ~/backup-fedora/
+cp ~/.tmux.conf     ~/backup-fedora/ 2>/dev/null
+
+# Opcional — ML/Dev
+cp -r ~/.jupyter    ~/backup-fedora/ 2>/dev/null
+cp -r ~/.keras      ~/backup-fedora/ 2>/dev/null
+
+# 2. Comprimir
+tar -czf ~/fedora-backup.tar.gz -C ~/ backup-fedora/
+
+# 3. Copiar a USB (reemplaza /media/usb por tu ruta real)
+cp ~/fedora-backup.tar.gz /media/usb/
+```
+
+### En Fedora (después de instalar):
+
+```bash
+# 1. Conectar USB y extraer
+tar -xzf /media/usb/fedora-backup.tar.gz -C ~/
+
+# 2. Mover a sus ubicaciones
+cp -r ~/backup-fedora/.ssh ~/
+cp -r ~/backup-fedora/.engram ~/
+# ... (repetir para cada carpeta)
+
+# 3. Ajustar permisos de SSH
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/id_*
+```
+
+> ⚠️ **NUNCA** subas este backup a GitHub. Contiene tus claves privadas.
+
 ## 👤 Autor
 
 **Juan David Valencia** — Full-Stack Developer / AI Engineer  
