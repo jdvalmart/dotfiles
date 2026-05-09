@@ -1,0 +1,24 @@
+# Secrets
+.env
+*.token
+*credentials*
+id_rsa*
+id_ed25519*
+*.pem
+
+# OS
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
+
+# Large files
+*.iso
+*.tar.gz
+*.zip
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+dist/
+.cache/

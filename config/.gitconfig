@@ -1,0 +1,13 @@
+[user]
+	name = Juan Valencia
+	email = juanvalencia9411@outlook.com
+[core]
+	editor = nvim
+	autocrlf = input
+	fileMode = false
+[init]
+	defaultBranch = main
+[pull]
+	rebase = false
+[color]
+	ui = auto

@@ -1,0 +1,8 @@
+/home/linuxbrew/.linuxbrew/lib
+@nestjs/cli@11.0.16
+docx@9.6.1
+markdown-pdf@11.0.0
+nodemon@3.1.11
+npm@11.6.2
+openclaw@2026.5.3-1
+
