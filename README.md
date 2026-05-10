@@ -29,7 +29,7 @@ chmod +x install.sh
 
 | OS | Estado |
 |----|--------|
-| **Fedora 41+** | ✅ Recomendado |
+| **Fedora 44+** | ✅ Recomendado |
 | **Ubuntu 24.04+** | ✅ Soportado |
 | **WSL2** | ⚠️ Origen de este backup |
 | **macOS** | ❌ No compatible |
